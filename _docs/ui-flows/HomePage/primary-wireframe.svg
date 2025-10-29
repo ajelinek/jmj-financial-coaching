@@ -1,0 +1,155 @@
+<svg width="800" height="3200" viewBox="0 0 800 3200" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&family=Playfair+Display:wght@700&display=swap');
+        .bg { fill: #ffffff; }
+        .section-bg { fill: #fafafa; }
+        .header-bg { fill: #ffffff; }
+        .footer-bg { fill: #15202b; }
+        .primary-btn { fill: #8b2c9c; stroke: #8b2c9c; }
+        .primary-btn-text { fill: #FFFFFF; font-family: 'Inter', sans-serif; font-size: 16px; text-anchor: middle; }
+        .h1 { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: bold; text-anchor: middle; fill: #15202b; }
+        .h2 { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: bold; text-anchor: middle; fill: #15202b; }
+        .h3 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: bold; text-anchor: middle; fill: #15202b; }
+        .p { font-family: 'Inter', sans-serif; font-size: 16px; fill: #15202b; }
+        .p-center { text-anchor: middle; }
+        .p-white { fill: #FFFFFF; }
+        .nav-text { font-family: 'Inter', sans-serif; font-size: 14px; text-anchor: middle; fill: #15202b; }
+        .placeholder { fill: #e7e7e7; stroke: #ced4da; stroke-width: 1; }
+        .placeholder-text { fill: #6C757D; font-family: 'Inter', sans-serif; font-size: 14px; text-anchor: middle; }
+        .accent-icon { fill: #4a9b8e; }
+    </style>
+
+    <rect x="0" y="0" width="800" height="3200" class="bg" />
+
+    <!-- Header -->
+    <rect x="0" y="0" width="800" height="60" class="header-bg" style="stroke-bottom: 1px solid #e7e7e7;" />
+    <rect x="40" y="15" width="100" height="30" class="placeholder" />
+    <text x="90" y="35" class="placeholder-text">Logo</text>
+    <text x="350" y="35" class="nav-text">Home</text>
+    <text x="420" y="35" class="nav-text">About</text>
+    <text x="500" y="35" class="nav-text">Services</text>
+    <text x="580" y="35" class="nav-text">Contact</text>
+    <rect x="620" y="15" width="160" height="30" rx="5" class="primary-btn" />
+    <text x="700" y="35" class="primary-btn-text">Book Consultation</text>
+
+    <!-- Hero Section -->
+    <rect x="0" y="60" width="800" height="400" class="placeholder" />
+    <text x="400" y="100" class="placeholder-text">Background Image (Jennifer)</text>
+    <text x="400" y="240" class="h1">JMJ Financial Coaching LLC</text>
+    <text x="400" y="290" class="p p-center" style="font-size: 20px;">Helping you achieve financial peace one step at a time.</text>
+    <rect x="300" y="320" width="200" height="40" rx="5" class="primary-btn" />
+    <text x="400" y="345" class="primary-btn-text">Book a Free Consultation</text>
+
+    <!-- Process Section -->
+    <rect x="0" y="460" width="800" height="380" class="section-bg" />
+    <text x="400" y="520" class="h2">Our Simple 3-Step Process</text>
+    <!-- Step 1 -->
+    <rect x="50" y="580" width="220" height="200" class="bg" rx="10" />
+    <rect x="125" y="590" width="70" height="70" class="accent-icon" rx="35"/>
+    <text x="160" y="630" class="placeholder-text" fill="white" font-size="30px">1</text>
+    <text x="160" y="690" class="h3">Book a Consultation</text>
+    <text x="60" y="720" class="p">
+        <tspan x="160" dy="1.2em" text-anchor="middle">Hassle-free, no-obligation</tspan>
+        <tspan x="160" dy="1.2em" text-anchor="middle">call to see if we're a good fit.</tspan>
+    </text>
+    <!-- Step 2 -->
+    <rect x="290" y="580" width="220" height="200" class="bg" rx="10" />
+    <rect x="365" y="590" width="70" height="70" class="accent-icon" rx="35"/>
+    <text x="400" y="630" class="placeholder-text" fill="white" font-size="30px">2</text>
+    <text x="400" y="690" class="h3">Create a Plan</text>
+    <text x="300" y="720" class="p">
+        <tspan x="400" dy="1.2em" text-anchor="middle">We'll work together to create</tspan>
+        <tspan x="400" dy="1.2em" text-anchor="middle">a plan to reach your goals.</tspan>
+    </text>
+    <!-- Step 3 -->
+    <rect x="530" y="580" width="220" height="200" class="bg" rx="10" />
+    <rect x="605" y="590" width="70" height="70" class="accent-icon" rx="35"/>
+    <text x="640" y="630" class="placeholder-text" fill="white" font-size="30px">3</text>
+    <text x="640" y="690" class="h3">Work the Plan</text>
+    <text x="540" y="720" class="p">
+        <tspan x="640" dy="1.2em" text-anchor="middle">I'm here to coach you</tspan>
+        <tspan x="640" dy="1.2em" text-anchor="middle">along the way.</tspan>
+    </text>
+
+    <!-- Value Prop Section -->
+    <rect x="0" y="840" width="800" height="200" class="bg" />
+    <text x="400" y="900" class="h2">Guidance and Accountability</text>
+    <text x="100" y="940" class="p">
+        <tspan x="400" dy="1.2em" text-anchor="middle">I can help you change your behavior with money and provide accountability along the way. Personal finance is 80%</tspan>
+        <tspan x="400" dy="1.2em" text-anchor="middle">behavior and 20% head knowledge. My job as a coach is to take you from where you are right now to where</tspan>
+        <tspan x="400" dy="1.2em" text-anchor="middle">you want to go, helping you build the habits you need to win with money.</tspan>
+    </text>
+
+    <!-- Founder's Story -->
+    <rect x="0" y="1040" width="800" height="400" class="section-bg" />
+    <text x="400" y="1100" class="h2">My Story</text>
+    <rect x="100" y="1140" width="250" height="250" class="placeholder" />
+    <text x="225" y="1265" class="placeholder-text">Image of Jennifer</text>
+    <text x="380" y="1160" class="p">
+        <tspan x="380" dy="1.2em">My husband and I have been married for 12 years. We always talked</tspan>
+        <tspan x="380" dy="1.2em">about me being a stay at home mom, but we didn't think it was</tspan>
+        <tspan x="380" dy="1.2em">financially possible...</tspan>
+    </text>
+
+    <!-- Debt Calculator Section -->
+    <rect x="0" y="1440" width="800" height="300" class="bg" />
+    <text x="400" y="1500" class="h2">Visualize Your Path to Zero Debt</text>
+    <text x="100" y="1550" class="p">
+        <tspan x="400" dy="1.2em" text-anchor="middle">How long will it take to pay off your debt with only minimum payments? Use our advanced debt payoff</tspan>
+        <tspan x="400" dy="1.2em" text-anchor="middle">calculator to see the timeline. The answer might surprise you. Discover how a personalized coaching plan</tspan>
+        <tspan x="400" dy="1.2em" text-anchor="middle">can help you get there faster and keep you focused on your goal.</tspan>
+    </text>
+    <rect x="300" y="1640" width="200" height="40" rx="5" class="primary-btn" />
+    <text x="400" y="1665" class="primary-btn-text">Launch the Calculator</text>
+
+    <!-- Testimonials -->
+    <rect x="0" y="1740" width="800" height="300" class="section-bg" />
+    <text x="400" y="1800" class="h2">What My Clients Say</text>
+    <rect x="50" y="1850" width="340" height="150" class="bg" rx="10" />
+    <text x="70" y="1880" class="p">
+        <tspan>"When our phone call started, I was so</tspan>
+        <tspan x="70" dy="1.2em">stressed I couldn't breathe. Now I am</tspan>
+        <tspan x="70" dy="1.2em">giddy with possibility!"</tspan>
+    </text>
+    <text x="360" y="1980" class="p" font-style="italic" text-anchor="end">- Client</text>
+    <rect x="410" y="1850" width="340" height="150" class="bg" rx="10" />
+    <text x="430" y="1880" class="p">
+        <tspan>"JMJ Financial has helped our family</tspan>
+        <tspan x="430" dy="1.2em">tremendously... I highly recommend you</tspan>
+        <tspan x="430" dy="1.2em">sign up with JMJ. You will not regret it!!!"</tspan>
+    </text>
+    <text x="720" y="1980" class="p" font-style="italic" text-anchor="end">- Client</text>
+
+    <!-- Contact Section -->
+    <rect x="0" y="2040" width="800" height="250" class="bg" />
+    <text x="400" y="2100" class="h2">Have Questions? Contact Me.</text>
+    <rect x="80" y="2140" width="200" height="100" class="section-bg" rx="10" />
+    <text x="180" y="2180" class="h3">Call Me</text>
+    <text x="180" y="2210" class="p p-center">(Click to Call)</text>
+    <rect x="300" y="2140" width="200" height="100" class="section-bg" rx="10" />
+    <text x="400" y="2180" class="h3">Chat</text>
+    <text x="400" y="2210" class="p p-center">(Facebook Messenger)</text>
+    <rect x="520" y="2140" width="200" height="100" class="section-bg" rx="10" />
+    <text x="620" y="2180" class="h3">Book a Consult</text>
+    <text x="620" y="2210" class="p p-center">(Schedule Now)</text>
+
+    <!-- Calendly Embed -->
+    <rect x="0" y="2290" width="800" height="600" class="section-bg" />
+    <text x="400" y="2340" class="h2">Book a Free Consultation</text>
+    <rect x="50" y="2370" width="700" height="500" class="placeholder" />
+    <text x="400" y="2620" class="placeholder-text" font-size="24px">Calendly Embed Area</text>
+
+    <!-- Footer -->
+    <rect x="0" y="2890" width="800" height="310" class="footer-bg" />
+    <text x="400" y="2940" class="h2 p-white">JMJ Financial Coaching</text>
+    <text x="400" y="2990" class="p p-white p-center">Bloomington, IL 61704</text>
+    <text x="400" y="3020" class="p p-white p-center">Phone: 309-279-5518</text>
+    <text x="400" y="3050" class="p p-white p-center">Email: jennifer@jmjfinancialcoaching.com</text>
+    <text x="400" y="3140" class="p p-white p-center">© 2025 JMJ Financial Coaching LLC. All Rights Reserved.</text>
+
+    <!-- Floating Messenger Button -->
+    <circle cx="750" cy="3150" r="30" fill="#8b2c9c" />
+    <path d="M745,3150 a5,5 0 0,1 10,0 a5,5 0 0,1 -10,0" stroke="#FFFFFF" stroke-width="2" fill="none" />
+    <polygon points="745,3145 755,3145 750,3150" stroke="#FFFFFF" stroke-width="2" fill="#FFFFFF" />
+
+</svg>
