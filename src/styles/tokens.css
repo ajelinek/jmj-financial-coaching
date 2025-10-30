@@ -1,0 +1,71 @@
+:root {
+  /* Colors */
+  --color-bg: #ffffff;
+  --color-surface: #f7f7f9;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-primary: #0ea5e9;
+  --color-primary-contrast: #ffffff;
+  --color-border: #e2e8f0;
+
+  /* Spacing (4px scale) */
+  --space-0: 0;
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-6: 1.5rem; /* 24px */
+  --space-8: 2rem; /* 32px */
+  --space-12: 3rem; /* 48px */
+  --space-16: 4rem; /* 64px */
+
+  /* Typography */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue',
+    Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Z-index */
+  --z-base: 1;
+  --z-overlay: 10;
+  --z-modal: 100;
+}
+
+/* Semantic tokens and legacy aliases (kept to avoid breaking changes) */
+:root {
+  /* Semantic text colors */
+  --color-text-primary: var(--color-text);
+  --color-text-secondary: var(--color-text-muted);
+  --color-bg-surface: var(--color-surface);
+
+  /* Brand semantics */
+  --color-brand: var(--color-primary);
+  --color-brand-contrast: var(--color-primary-contrast);
+
+  /* Spacing semantics */
+  --spacing-0: var(--space-0);
+  --spacing-xs: var(--space-1);
+  --spacing-sm: var(--space-2);
+  --spacing-md: var(--space-4);
+  --spacing-lg: var(--space-6);
+  --spacing-xl: var(--space-8);
+  --spacing-2xl: var(--space-12);
+  --spacing-3xl: var(--space-16);
+
+  /* Typography semantics */
+  --font-size-body: var(--font-size-base);
+  --font-size-subtitle: var(--font-size-lg);
+  --font-size-title: var(--font-size-2xl);
+  --font-size-display: var(--font-size-4xl);
+}

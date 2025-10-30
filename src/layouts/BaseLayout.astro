@@ -1,0 +1,44 @@
+---
+import '../styles/tokens.css'
+import '../styles/global.css'
+
+export interface Props {
+  seo?: {
+    title?: string
+    description?: string
+    canonical?: string
+  }
+}
+
+const { seo } = Astro.props as Props
+
+const siteTitle = 'JMJ Financial Coaching'
+const defaultDescription = 'Faith-centered financial coaching to help you build a peaceful, purpose-driven money plan.'
+const pageTitle = seo?.title ? `${seo.title} • ${siteTitle}` : siteTitle
+const canonicalUrl = seo?.canonical ?? new URL(Astro.url.pathname, Astro.site).toString()
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <title>{pageTitle}</title>
+    <meta name='description' content={seo?.description ?? defaultDescription} />
+    <link rel='canonical' href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property='og:type' content='website' />
+    <meta property='og:title' content={pageTitle} />
+    <meta property='og:description' content={seo?.description ?? defaultDescription} />
+    <meta property='og:url' content={canonicalUrl} />
+
+    <!-- Twitter -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:title' content={pageTitle} />
+    <meta name='twitter:description' content={seo?.description ?? defaultDescription} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

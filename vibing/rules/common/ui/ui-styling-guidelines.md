@@ -56,16 +56,24 @@ styles/
 **Component Styles (ComponentName.module.css)**
 
 - Component-specific styles
-- Composed of a single class per element
+- Exactly one class name per element
+  - Optional: at most one modifier class (rare, purposeful)
 - Use CSS Modules for scoping
 - Leverage PostCSS features for maintainability
-- Import styles using s `import s from './styles.module.css';`
+- Import styles using `import s from './styles.module.css';`
+
+### Philosophy: Not a CSS framework
+
+- We are not building a utility CSS framework.
+- Class names live in the HTML and are semantic/stable; reuse is achieved in CSS via tokens and composition, not by stacking many utility classes.
+- Do not design styles first and then hunt for places to apply them; define clear, minimal classes in markup and implement them in CSS.
 
 ## Best Practices
 
 ### Do:
 
 - Use CSS custom properties for all design tokens
+- Use exactly one class per element; add a single modifier only when truly necessary
 - Prefer composition over inheritance
 - Keep selectors flat (avoid nesting > 2 levels)
 - Use logical properties for RTL support
@@ -81,6 +89,8 @@ styles/
 - NO complex selectors (e.g., `.parent > div > span`)
 - NO ID selectors for styling
 - NO inline styles
+- NO multiple classes on an element (except a single, approved modifier)
+- NO utility-class stacking
 - NO fixed units (px) for typography or spacing, use rem
 - NO media queries for layout (prefer container queries)
 - NO CSS preprocessors (use native CSS features)
