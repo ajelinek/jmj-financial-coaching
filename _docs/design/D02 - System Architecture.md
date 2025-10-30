@@ -6,7 +6,7 @@
 
 - **Primary Architecture**: Static Site Generation (SSG) with embedded external services
 - **Core Patterns**: Component-based architecture with island architecture for interactivity
-- **Communication**: Embedded widgets (Calendly, Facebook), external APIs (Google Analytics, IndexNow)
+- **Communication**: Embedded widgets (Calendly, Facebook), external APIs (IndexNow)
 - **Infrastructure Highlights**: GitHub Pages hosting, global CDN distribution, automated CI/CD pipeline
 - **Key Drivers**: Performance, simplicity, cost-effectiveness, maintainability
 
@@ -14,7 +14,7 @@
 
 1. **Static Website (Frontend)**: User interface, content presentation, and client-side interactions
 2. **Build System**: AstroJS compilation, asset optimization, and static site generation
-3. **External Service Integrations**: Calendly scheduling, Facebook Messenger, Google Analytics, IndexNow API
+3. **External Service Integrations**: Calendly scheduling, Facebook Messenger, IndexNow API
 4. **Content Management**: Markdown files for testimonials, HTML components for structured content
 5. **Deployment Pipeline**: GitHub Actions for automated build and deployment to GitHub Pages
 
@@ -23,7 +23,7 @@
 - **Frontend**: AstroJS with TypeScript, Solid.js islands for interactivity, CSS custom properties with 3-layer token system
 - **Styling**: CSS Modules with custom properties (Global → Semantic → Component tokens)
 - **Content**: Markdown files for testimonials, HTML in Astro components for structured content
-- **External Services**: Calendly embedded widgets, Facebook Customer Chat Plugin, Google Analytics 4, IndexNow API
+- **External Services**: Calendly embedded widgets, Facebook Customer Chat Plugin, IndexNow API
 - **Infrastructure**: GitHub Pages hosting with global CDN, GitHub Actions for CI/CD
 - **Development Tools**: AstroJS build system, Playwright for E2E testing, TypeScript for type safety
 

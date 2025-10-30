@@ -58,7 +58,7 @@
 │   ├── /base/                # Base styles and resets
 │   └── /utilities/           # Utility classes
 ├── /store/                   # State management (minimal for static site)
-│   ├── /repository/          # External system interactions (Calendly, Analytics)
+│   ├── /repository/          # External system interactions (Calendly)
 │   ├── /service/             # Business logic & state management
 │   └── /config.ts            # System configuration
 ├── /utils/                   # Utility functions and helpers
@@ -94,7 +94,7 @@
 
 - **Global State**: Minimal Service-Repository architecture for external integrations:
 
-  - **Repository Layer** (`/store/repository/`): Direct external system interactions (Calendly API, Google Analytics, IndexNow API)
+  - **Repository Layer** (`/store/repository/`): Direct external system interactions (Calendly API, IndexNow API)
   - **Service Layer** (`/store/service/`): Business logic and state management via custom hooks for external widget management
   - Components access external services through service hooks only (never direct repository access)
 

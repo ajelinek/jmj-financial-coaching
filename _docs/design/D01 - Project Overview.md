@@ -31,7 +31,7 @@ A professional static website that helps individuals and families struggling wit
   - GitHub Pages hosting with automatic deployment on push to public branch
   - Calendly integration for appointment scheduling
   - Facebook Messenger integration for direct messaging
-  - Google Analytics tracking
+  - Basic SEO metadata and sitemaps
   - Mobile-responsive design
 
 - **Preferred**:
@@ -53,4 +53,4 @@ A professional static website that helps individuals and families struggling wit
 - **Contact & Scheduling**: Multiple ways to book consultations (Calendly, email, phone, Facebook Messenger)
 - **About & Credibility**: Information about Jennifer and her approach to financial coaching
 - **Local SEO & Business Listings**: Optimization for local search and business directory presence
-- **Analytics & Tracking**: Google Analytics integration and IndexNow for search engine updates
+- **Search Indexing**: IndexNow integration for search engine updates
