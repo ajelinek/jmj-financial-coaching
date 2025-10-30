@@ -42,7 +42,7 @@ graph TD
 | `src/lib/integrations/calendly.ts`         | `ensureCalendlyPopup` utility   | New     | Safely injects Calendly widget script once and exposes a function to open the popup by URL.            |
 | `src/layouts/BaseLayout.astro`             | Calendly script hook            | Updated | Adds deferred Calendly widget loader hook used by CTA utility; no visual change.                       |
 | `src/pages/index.astro`                    | Hero CTA usage                  | Updated | Renders `BookConsultationCTA` in hero and optionally header; passes Calendly URL and tracking context. |
-| `src/components/Header.astro`              | Header CTA usage                | Updated | Adds compact `BookConsultationCTA` instance in header for persistent access.                           |
+| `src/components/Header.astro`              | Header CTA usage                | New     | Adds compact `BookConsultationCTA` instance in header for persistent access.                           |
 
 ## 4. Implementation Details
 
@@ -79,10 +79,10 @@ graph TD
 
 ##### `ensureCalendlyPopup` Function: `params: { url: string } | string` → `{ open: () => void }`
 
-- **What**: Injects the Calendly script once (deferred), configures the popup for a given scheduling URL, and returns an `open` invoker.
+- **What**: Injects Calendly's widget assets once (CSS/JS from `https://assets.calendly.com/assets/external/widget.{css,js}`) and returns an `open()` that calls `Calendly.initPopupWidget({ url })`. We control our own buttons/links; Calendly script is only for the popup.
 - **Why**: Encapsulates third-party loading and shields the rest of the codebase from script timing issues.
-- **Constraints**: Must no-op on SSR; must guard against multiple append attempts; handle network failure gracefully.
-- **Integration Points**: Exposes a tiny interface so components can trigger without caring about script lifecycle.
+- **Constraints**: No-op on SSR; guard against multiple appends; safe to call repeatedly; minimal surface—no Calendly-provided buttons.
+- **Integration Points**: Called by CTA to open popup on activation.
 
 ### 4.3. Base Layout (`src/layouts/BaseLayout.astro`)
 
@@ -124,6 +124,15 @@ graph TD
 - **Why**: Ensures discoverability from any scroll position.
 - **Constraints**: Respect responsive layout and avoid overlap with navigation elements.
 
+### 4.6. Implementation Order & Dependencies
+
+1. Create `src/lib/integrations/calendly.ts` (loader + `ensureCalendlyPopup` that wraps `Calendly.initPopupWidget`).
+2. Create `src/components/BookConsultationCTA.astro` (uses `ensureCalendlyPopup` on activation; accessible button/link semantics per project rules).
+3. Update `src/layouts/BaseLayout.astro` (optional: add deferred/hook to ensure widget assets available—no visual changes).
+4. Update `src/pages/index.astro` (add hero CTA instance with primary variant and scheduling URL).
+5. Create `src/components/Header.astro` (add inline variant CTA for persistent access).
+6. Wire tokens/styles where needed; keep behavior centralized in CTA + loader.
+
 ## 5. Test Scenarios
 
-TODO: To be completed in Technical Design (implementation phase).
+Out of scope for this iteration per decision: no testing deliverables included.

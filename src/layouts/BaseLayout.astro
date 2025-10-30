@@ -40,5 +40,6 @@ const canonicalUrl = seo?.canonical ?? new URL(Astro.url.pathname, Astro.site).t
   </head>
   <body>
     <slot />
+    <div id='integrations-root' hidden></div>
   </body>
 </html>

@@ -1,0 +1,29 @@
+---
+import BookConsultationCTA from './BookConsultationCTA.astro'
+
+export interface Props {
+  calendlyUrl: string
+}
+
+const { calendlyUrl } = Astro.props as Props
+---
+
+<header class='site-header'>
+  <nav aria-label='Primary'>
+    <a href='/' aria-label='JMJ Financial Coaching home'>
+      <strong>JMJ Financial Coaching</strong>
+    </a>
+  </nav>
+  <div class='site-header-cta'>
+    <BookConsultationCTA url={calendlyUrl} location='header' variant='inline' label='Book consultation' />
+  </div>
+</header>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+</style>

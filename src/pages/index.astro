@@ -1,22 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Header from '../components/Header.astro'
+import BookConsultationCTA from '../components/BookConsultationCTA.astro'
+import { defaultCalendlyUrl } from '../lib/integrations/calendly'
 ---
 
 <BaseLayout seo={{ title: undefined }}>
-  <header class='site-header'>
-    <nav aria-label='Primary'>
-      <a href='/' aria-label='JMJ Financial Coaching home'>
-        <strong>JMJ Financial Coaching</strong>
-      </a>
-    </nav>
-  </header>
+  <Header calendlyUrl={defaultCalendlyUrl} />
 
   <main class='site-main'>
     <section aria-labelledby='hero-heading'>
       <h1 id='hero-heading'>Build a peaceful, purpose-driven money plan</h1>
       <p class='hero-lead'>Faith-centered financial coaching to align your money with your mission and values.</p>
       <p class='hero-cta'>
-        <a class='button' href='#book' aria-label='Book a primary consultation'>Book a consultation</a>
+        <BookConsultationCTA url={defaultCalendlyUrl} location='hero' variant='primary' label='Book a consultation' />
       </p>
     </section>
   </main>
@@ -24,6 +21,4 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   <footer class='site-footer'>
     <p>© {new Date().getFullYear()} JMJ Financial Coaching</p>
   </footer>
-
-  <div id='book' hidden></div>
 </BaseLayout>
