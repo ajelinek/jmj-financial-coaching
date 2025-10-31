@@ -1,11 +1,5 @@
 ---
 import BookConsultationCTA from './BookConsultationCTA.astro'
-
-export interface Props {
-  calendlyUrl: string
-}
-
-const { calendlyUrl } = Astro.props as Props
 ---
 
 <header class='site-header'>
@@ -15,7 +9,7 @@ const { calendlyUrl } = Astro.props as Props
     </a>
   </nav>
   <div class='site-header-cta'>
-    <BookConsultationCTA url={calendlyUrl} location='header' variant='primary' label='Book Free Consult' />
+    <BookConsultationCTA location='header' variant='primary' label='Book Free Consult' />
   </div>
 </header>
 

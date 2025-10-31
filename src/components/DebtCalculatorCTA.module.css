@@ -1,0 +1,28 @@
+@value primaryButtonBase from '../styles/composition.module.css';
+
+.debtCalculatorCta {
+  padding-block: var(--space-12);
+  text-align: center;
+  background: var(--gradient-primary-surface);
+  border-radius: var(--radius-lg);
+  margin-inline: var(--space-4);
+}
+
+.title {
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+}
+
+.description {
+  max-width: 700px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+  font-size: var(--font-size-lg);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.calculatorButton {
+  composes: primaryButtonBase;
+  display: inline-block;
+}

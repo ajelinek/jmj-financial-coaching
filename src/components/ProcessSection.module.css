@@ -1,0 +1,78 @@
+@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../styles/composition.module.css';
+
+.processSection {
+  padding-block: var(--section-padding-block);
+  width: 100%;
+}
+
+.processWrapper {
+  composes: sectionContainer;
+}
+
+.processHeader {
+  composes: sectionHeader;
+  margin-bottom: var(--space-12);
+}
+
+.headerIconWrapper {
+  composes: sectionIconWrapper;
+}
+
+.headerSectionIcon {
+  composes: sectionIcon;
+}
+
+.processHeaderH2 {
+  font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.processContainer {
+  background: var(--gradient-primary-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+.processStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-6);
+}
+
+.stepIconWrapper {
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.stepIcon {
+  width: 64px;
+  height: 64px;
+}
+
+.stepTitle {
+  font-size: clamp(var(--font-size-lg), 2vw, var(--font-size-xl));
+  color: var(--color-primary);
+  font-weight: 600;
+  margin: 0;
+}
+
+.stepDescription {
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .processContainer {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    padding: var(--space-8);
+  }
+}

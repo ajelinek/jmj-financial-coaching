@@ -1,0 +1,23 @@
+---
+interface Props {
+  width?: string
+  height?: string
+  class?: string
+  'aria-hidden'?: string | boolean
+}
+
+const { width = '1em', height = '1em', class: className = '', 'aria-hidden': ariaHidden = true } = Astro.props
+---
+
+<svg
+  width={width}
+  height={height}
+  viewBox='0 0 24 24'
+  fill='currentColor'
+  stroke='currentColor'
+  class={className}
+  aria-hidden={ariaHidden}
+>
+  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+</svg>
+

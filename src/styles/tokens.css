@@ -52,6 +52,24 @@
   --z-overlay: 10;
   --z-modal: 100;
   --z-floating: 50; /* for floating buttons */
+
+  /* Composite Variables - Token-Level Combinations */
+  /* Layout & Container */
+  --container-max-width: 1200px;
+  --section-padding-block: var(--space-16);
+  --section-container-padding: var(--space-6);
+
+  /* Backgrounds */
+  --gradient-primary-surface: linear-gradient(135deg, rgba(139, 44, 156, 0.05), rgba(74, 155, 142, 0.05));
+
+  /* Button Composites */
+  --button-padding-primary: var(--space-3) var(--space-6);
+  --button-padding-large: 1.25rem var(--space-8);
+
+  /* Shadows */
+  --shadow-button: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-card: 0 4px 12px rgba(139, 44, 156, 0.15);
+  --shadow-card-hover: 0 8px 20px rgba(139, 44, 156, 0.2);
 }
 
 /* Semantic tokens and legacy aliases (kept to avoid breaking changes) */

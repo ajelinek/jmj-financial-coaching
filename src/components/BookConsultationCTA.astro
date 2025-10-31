@@ -1,86 +1,33 @@
 ---
+import styles from './BookConsultationCTA.module.css';
+
 export interface Props {
-  url: string
   label?: string
   variant?: 'primary' | 'inline'
   location: 'hero' | 'header' | 'section'
 }
 
-const { url, label = 'Book Free Consult', variant = 'primary', location } = Astro.props as Props
+const { label = 'Book Free Consult', variant = 'primary', location } = Astro.props as Props
 const elementId = `book-consultation-cta-${location}`
 ---
 
 <button
   id={elementId}
-  class={variant === 'primary' ? 'button' : 'link-inline'}
+  class={variant === 'primary' ? styles.button : styles.linkInline}
   type='button'
-  aria-label={label}
-  aria-haspopup='dialog'
-  aria-controls='calendly-popup'
-  aria-expanded='false'
+  aria-label={`${label} - navigate to booking section`}
 >
   {label}
 </button>
 
-<script type='module' define:vars={{ elementId, url }}>
-  import { ensureCalendlyPopup } from '/src/lib/integrations/calendly'
-
+<script type='module' define:vars={{ elementId }}>
   const button = document.getElementById(elementId)
   if (button) {
     button.addEventListener('click', () => {
-      const popup = ensureCalendlyPopup({ url, hideDetails: false })
-      // reflect expanded state for assistive tech when opening the modal
-      button.setAttribute('aria-expanded', 'true')
-      popup.open()
+      const targetSection = document.getElementById('book')
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
     })
   }
-
-  // Create a hidden control target for a11y reference
-  let target = document.getElementById('calendly-popup')
-  if (!target) {
-    target = document.createElement('div')
-    target.id = 'calendly-popup'
-    target.hidden = true
-    document.body.appendChild(target)
-  }
 </script>
-
-<style>
-  .button {
-    appearance: none;
-    background: var(--color-primary);
-    color: var(--color-primary-contrast);
-    border: 0;
-    border-radius: var(--radius-md);
-    padding: var(--space-3) var(--space-6);
-    font: inherit;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-
-  .button:hover {
-    background: var(--color-primary-secondary);
-    text-decoration: none;
-  }
-
-  .button:focus-visible {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
-  }
-
-  .link-inline {
-    appearance: none;
-    background: transparent;
-    border: 0;
-    color: inherit;
-    text-decoration: underline;
-    cursor: pointer;
-    padding: 0;
-    font: inherit;
-  }
-
-  .link-inline:hover {
-    color: var(--color-primary);
-  }
-</style>

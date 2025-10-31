@@ -1,11 +1,12 @@
 ---
-
+import styles from './FounderStory.module.css'
+import UserIcon from './icons/UserIcon.astro'
 ---
 
-<section class='founder-story' aria-labelledby='story-heading'>
-  <div class='story-wrapper'>
-    <div class='story-container'>
-      <div class='story-image'>
+<section class={styles.founderStory} aria-labelledby='story-heading'>
+  <div class={styles.storyWrapper}>
+    <div class={styles.storyContainer}>
+      <div class={styles.storyImage}>
         <img
           src='/logos-and-images/Business Photo.JPG'
           alt='Jennifer, founder of JMJ Financial Coaching'
@@ -14,28 +15,14 @@
           loading='lazy'
         />
       </div>
-      <div class='story-right-content'>
-        <div class='story-header'>
-          <div class='icon-wrapper'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='64'
-              height='64'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              stroke-width='2'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-              class='section-icon'
-            >
-              <path d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'></path>
-              <circle cx='12' cy='7' r='4'></circle>
-            </svg>
+      <div class={styles.storyRightContent}>
+        <div class={styles.storyHeader}>
+          <div class={styles.headerIconWrapper}>
+            <UserIcon width='64' height='64' class={styles.headerSectionIcon} />
           </div>
-          <h2 id='story-heading'>My Story</h2>
+          <h2 id='story-heading' class={styles.storyHeaderH2}>My Story</h2>
         </div>
-        <div class='story-text'>
+        <div class={styles.storyText}>
           <p>
             Three years ago, I suddenly lost my job and our household income was cut in half overnight. We were really
             scared. But putting together a budget changed everything. We made some lifestyle changes, and I got to
@@ -50,90 +37,3 @@
     </div>
   </div>
 </section>
-
-<style>
-  .founder-story {
-    padding-block: var(--space-16);
-    width: 100%;
-  }
-
-  .story-wrapper {
-    max-width: 1200px;
-    margin-inline: auto;
-    padding-inline: var(--space-6);
-  }
-
-  .story-container {
-    background: linear-gradient(135deg, rgba(139, 44, 156, 0.05), rgba(74, 155, 142, 0.05));
-    border-radius: var(--radius-lg);
-    padding: var(--space-12);
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--space-8);
-    align-items: stretch;
-  }
-
-  .story-right-content {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .story-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: var(--space-6);
-    margin-bottom: var(--space-12);
-  }
-
-  .icon-wrapper {
-    color: var(--color-primary);
-    margin-bottom: var(--space-2);
-  }
-
-  .section-icon {
-    width: 64px;
-    height: 64px;
-  }
-
-  .story-header h2 {
-    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
-    color: var(--color-primary);
-    margin: 0;
-  }
-
-  .story-image {
-    border-radius: 12px;
-    overflow: hidden;
-    height: 100%;
-  }
-
-  .story-image img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 12px;
-  }
-
-  .story-text {
-    font-size: var(--font-size-lg);
-    line-height: 1.8;
-    color: var(--color-text);
-  }
-
-  .story-text p {
-    margin-bottom: var(--space-4);
-  }
-
-  @media (max-width: 768px) {
-    .story-container {
-      grid-template-columns: 1fr;
-    }
-
-    .story-image {
-      display: none;
-    }
-  }
-</style>

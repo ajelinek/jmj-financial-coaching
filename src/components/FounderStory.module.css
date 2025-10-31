@@ -1,0 +1,78 @@
+@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../styles/composition.module.css';
+
+.founderStory {
+  padding-block: var(--section-padding-block);
+  width: 100%;
+}
+
+.storyWrapper {
+  composes: sectionContainer;
+}
+
+.storyContainer {
+  background: var(--gradient-primary-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-8);
+  align-items: stretch;
+}
+
+.storyRightContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.storyHeader {
+  composes: sectionHeader;
+  margin-bottom: var(--space-12);
+}
+
+.headerIconWrapper {
+  composes: sectionIconWrapper;
+}
+
+.headerSectionIcon {
+  composes: sectionIcon;
+}
+
+.storyHeaderH2 {
+  font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.storyImage {
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.storyImage img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.storyText {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.storyText p {
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .storyContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .storyImage {
+    display: none;
+  }
+}

@@ -1,0 +1,20 @@
+@value primaryButtonBase from '../styles/composition.module.css';
+
+.button {
+  composes: primaryButtonBase;
+}
+
+.linkInline {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.linkInline:hover {
+  color: var(--color-primary);
+}
