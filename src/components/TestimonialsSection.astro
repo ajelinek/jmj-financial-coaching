@@ -17,59 +17,186 @@ const testimonials = [
 ---
 
 <section class='testimonials-section' aria-labelledby='testimonials-heading'>
-  <h2 id='testimonials-heading'>What My Clients Say</h2>
-  <div class='testimonials-grid'>
-    {
-      testimonials.map(testimonial => (
-        <blockquote class='testimonial-card'>
-          <p class='testimonial-quote'>{testimonial.quote}</p>
-          <footer class='testimonial-author'>— {testimonial.author}</footer>
-        </blockquote>
-      ))
-    }
+  <div class='testimonials-container'>
+    <div class='testimonials-header'>
+      <div class='icon-wrapper'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='64'
+          height='64'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          class='section-icon'
+        >
+          <path
+            d='M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z'
+          ></path>
+          <path
+            d='M15 21c3 0 7-1 7-8v-6c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z'
+          ></path>
+        </svg>
+      </div>
+      <h2 id='testimonials-heading'>What My Clients Say</h2>
+    </div>
+    <div class='testimonials-grid'>
+      {
+        testimonials.map(testimonial => (
+          <blockquote class='testimonial-card'>
+            <div class='quote-icon'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='24'
+                height='24'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'>
+                <path d='M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z' />
+                <path d='M15 21c3 0 7-1 7-8v-6c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z' />
+              </svg>
+            </div>
+            <p class='testimonial-quote'>{testimonial.quote}</p>
+            <footer class='testimonial-author'>
+              <div class='star-rating'>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor'>
+                  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                </svg>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor'>
+                  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                </svg>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor'>
+                  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                </svg>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor'>
+                  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                </svg>
+                <svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor' stroke='currentColor'>
+                  <polygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2' />
+                </svg>
+              </div>
+              <span>— {testimonial.author}</span>
+            </footer>
+          </blockquote>
+        ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
   .testimonials-section {
-    padding-block: var(--space-12);
-    background: linear-gradient(180deg, rgba(139, 44, 156, 0.05), var(--color-bg-surface));
+    padding-block: var(--space-16);
+    width: 100%;
   }
 
-  .testimonials-section h2 {
+  .testimonials-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+
+  .testimonials-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    margin-bottom: var(--space-8);
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+
+  .icon-wrapper {
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .section-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .testimonials-header h2 {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+    color: var(--color-primary);
+    margin: 0;
   }
 
   .testimonials-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--space-6);
-    max-width: 1000px;
-    margin-inline: auto;
+    gap: var(--space-8);
+    background: linear-gradient(135deg, rgba(139, 44, 156, 0.05), rgba(74, 155, 142, 0.05));
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
   }
 
   .testimonial-card {
     background: var(--color-bg);
-    padding: var(--space-6);
+    padding: var(--space-8);
     border-radius: var(--radius-lg);
     border: 2px solid var(--color-primary);
-    border-left: 4px solid var(--color-accent);
     margin: 0;
-    box-shadow: 0 2px 8px rgba(139, 44, 156, 0.1);
+    box-shadow: 0 4px 12px rgba(139, 44, 156, 0.15);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(139, 44, 156, 0.2);
+  }
+
+  .quote-icon {
+    color: var(--color-primary);
+    opacity: 0.3;
+    position: absolute;
+    top: var(--space-6);
+    left: var(--space-6);
   }
 
   .testimonial-quote {
     font-size: var(--font-size-lg);
-    line-height: 1.6;
-    margin-bottom: var(--space-4);
+    line-height: 1.7;
     color: var(--color-text);
+    margin-top: var(--space-4);
+    font-style: italic;
   }
 
   .testimonial-author {
-    font-style: italic;
-    color: var(--color-text-muted);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-2);
+    margin-top: auto;
     font-size: var(--font-size-sm);
-    text-align: right;
+    color: var(--color-text-muted);
+  }
+
+  .star-rating {
+    display: flex;
+    gap: var(--space-1);
+    color: #fbbf24;
+  }
+
+  .star-rating svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .testimonials-grid {
+      grid-template-columns: 1fr;
+      padding: var(--space-6);
+    }
   }
 </style>

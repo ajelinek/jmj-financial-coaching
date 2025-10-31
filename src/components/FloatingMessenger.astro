@@ -1,5 +1,5 @@
 ---
-
+import FacebookMessengerIcon from './FacebookMessengerIcon.astro'
 ---
 
 <a
@@ -9,11 +9,8 @@
   class='floating-messenger'
   aria-label='Chat with us on Facebook Messenger'
 >
-  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
-    <path
-      d='M20 2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h4v4l4-4h8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z'
-      fill='currentColor'></path>
-  </svg>
+  <FacebookMessengerIcon width='24' height='24' />
+  <span class='messenger-label'>Facebook Messenger</span>
 </a>
 
 <style>
@@ -21,26 +18,51 @@
     position: fixed;
     bottom: var(--space-6);
     right: var(--space-6);
-    width: 56px;
-    height: 56px;
-    background: var(--color-primary);
-    color: var(--color-primary-contrast);
-    border-radius: var(--radius-full);
+    background: #0084ff;
+    color: white;
+    border-radius: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: var(--z-floating);
     transition:
       background-color 0.2s ease,
       transform 0.2s ease;
     text-decoration: none;
+    z-index: var(--z-floating);
+  }
+
+  .floating-messenger svg {
+    flex-shrink: 0;
+  }
+
+  .messenger-label {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    display: none;
   }
 
   .floating-messenger:hover {
-    background: var(--color-primary-secondary);
+    background: #0066cc;
     transform: scale(1.05);
     text-decoration: none;
+  }
+
+  .floating-messenger:hover .messenger-label {
+    display: inline-block;
+  }
+
+  @media (min-width: 768px) {
+    .messenger-label {
+      display: inline-block;
+    }
+
+    .floating-messenger {
+      padding: var(--space-3) var(--space-5);
+    }
   }
 
   .floating-messenger:focus-visible {

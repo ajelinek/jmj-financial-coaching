@@ -1,136 +1,201 @@
 ---
 const steps = [
   {
-    number: 1,
     title: 'Book a Consultation',
     description:
       "This is a hassle-free, no-obligation call to get to know each other a bit. It gives me a chance to hear more about your situation and specific needs, and gives you a chance to see if we'll be a good fit.",
+    icon: 'calendar',
   },
   {
-    number: 2,
     title: 'Create a Plan Together',
     description:
       "Once we outline your areas of biggest need, we'll work together to create a plan to help you reach your goals.",
+    icon: 'plan',
   },
   {
-    number: 3,
     title: 'Work the Plan Together',
     description:
       "True change comes when behavior is adjusted, not simply understanding concepts. I'm here to coach you along the way to help you reach your goals.",
+    icon: 'team',
   },
 ]
 ---
 
 <section class='process-section' aria-labelledby='process-heading'>
-  <h2 id='process-heading'>It's That Easy: Just 3 Simple Steps</h2>
-  <div class='process-steps'>
-    {
-      steps.map((step, index) => (
-        <article class='process-step'>
-          <div class='step-header'>
-            <span class='step-number'>{step.number}</span>
-            {index < steps.length - 1 && <span class='step-connector' />}
-          </div>
-          <h3 class='step-title'>{step.title}</h3>
-          <p class='step-description'>{step.description}</p>
-        </article>
-      ))
-    }
+  <div class='process-wrapper'>
+    <div class='process-header'>
+      <div class='icon-wrapper'>
+        <svg
+          xmlns='http://www.w3.org/2000/svg'
+          width='64'
+          height='64'
+          viewBox='0 0 24 24'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          class='section-icon'
+        >
+          <path d='M22 11.08V12a10 10 0 1 1-5.93-9.14'></path>
+          <polyline points='22 4 12 14.01 9 11.01'></polyline>
+        </svg>
+      </div>
+      <h2 id='process-heading'>It's That Easy: Just 3 Simple Steps</h2>
+    </div>
+    <div class='process-container'>
+      {
+        steps.map(step => (
+          <article class='process-step'>
+            <div class='step-icon-wrapper'>
+              {step.icon === 'calendar' && (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='64'
+                  height='64'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  class='step-icon'>
+                  <rect x='3' y='4' width='18' height='18' rx='2' ry='2' />
+                  <line x1='16' y1='2' x2='16' y2='6' />
+                  <line x1='8' y1='2' x2='8' y2='6' />
+                  <line x1='3' y1='10' x2='21' y2='10' />
+                </svg>
+              )}
+              {step.icon === 'plan' && (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='64'
+                  height='64'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  class='step-icon'>
+                  <path d='M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z' />
+                  <polyline points='14 2 14 8 20 8' />
+                  <line x1='16' y1='13' x2='8' y2='13' />
+                  <line x1='16' y1='17' x2='8' y2='17' />
+                  <polyline points='10 9 9 9 8 9' />
+                </svg>
+              )}
+              {step.icon === 'team' && (
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='64'
+                  height='64'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  stroke-width='2'
+                  stroke-linecap='round'
+                  stroke-linejoin='round'
+                  class='step-icon'>
+                  <path d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2' />
+                  <circle cx='9' cy='7' r='4' />
+                  <path d='M23 21v-2a4 4 0 0 0-3-3.87' />
+                  <path d='M16 3.13a4 4 0 0 1 0 7.75' />
+                </svg>
+              )}
+            </div>
+            <h3 class='step-title'>{step.title}</h3>
+            <p class='step-description'>{step.description}</p>
+          </article>
+        ))
+      }
+    </div>
   </div>
 </section>
 
 <style>
   .process-section {
     padding-block: var(--space-16);
-    background: linear-gradient(180deg, var(--color-bg-surface), rgba(74, 155, 142, 0.08));
+    width: 100%;
   }
 
-  .process-section h2 {
-    text-align: center;
-    margin-bottom: var(--space-12);
-    font-size: var(--font-size-4xl);
-    color: var(--color-primary);
-  }
-
-  .process-steps {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: var(--space-8);
-    max-width: 1100px;
+  .process-wrapper {
+    max-width: 1200px;
     margin-inline: auto;
-    position: relative;
+    padding-inline: var(--space-6);
+  }
+
+  .process-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+
+  .icon-wrapper {
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .section-icon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .process-header h2 {
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+    color: var(--color-primary);
+    margin: 0;
+  }
+
+  .process-container {
+    background: linear-gradient(135deg, rgba(139, 44, 156, 0.05), rgba(74, 155, 142, 0.05));
+    border-radius: var(--radius-lg);
+    padding: var(--space-12);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-8);
   }
 
   .process-step {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    padding: 0 var(--space-4);
-    max-width: 320px;
+    gap: var(--space-6);
   }
 
-  .step-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: var(--space-6);
-    position: relative;
+  .step-icon-wrapper {
+    color: var(--color-primary);
+    margin-bottom: var(--space-2);
   }
 
-  .step-number {
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-full);
-    background: var(--color-primary);
-    color: var(--color-primary-contrast);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1;
-    font-family: var(--font-serif);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 2;
-  }
-
-  .step-connector {
-    position: absolute;
-    left: calc(50% + 24px);
-    top: 50%;
-    right: calc(-50% - 24px);
-    height: 2px;
-    background: var(--color-accent);
-    transform: translateY(-50%);
-    z-index: 1;
+  .step-icon {
+    width: 64px;
+    height: 64px;
   }
 
   .step-title {
-    margin-bottom: var(--space-4);
-    font-size: var(--font-size-xl);
+    font-size: clamp(var(--font-size-lg), 2vw, var(--font-size-xl));
     color: var(--color-primary);
     font-weight: 600;
+    margin: 0;
   }
 
   .step-description {
-    color: var(--color-text-muted);
-    line-height: 1.7;
-    font-size: var(--font-size-base);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: var(--font-size-lg);
+    margin: 0;
   }
 
   @media (max-width: 768px) {
-    .process-steps {
-      flex-direction: column;
-      gap: var(--space-12);
-    }
-
-    .step-connector {
-      display: none;
-    }
-
-    .process-step {
-      max-width: 100%;
+    .process-container {
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      padding: var(--space-8);
     }
   }
 </style>

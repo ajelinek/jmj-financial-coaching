@@ -108,7 +108,7 @@ function getThemeFromCss(): ThemeOptions {
   }
 }
 
-function buildCustomizedUrl(
+export function buildCustomizedUrl(
   baseUrl: string,
   opts: { theme?: ThemeOptions; hideDetails?: boolean; hideGdprBanner?: boolean }
 ): string {

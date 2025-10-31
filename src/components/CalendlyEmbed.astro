@@ -1,44 +1,175 @@
 ---
-import { defaultCalendlyUrl } from '../lib/integrations/calendly'
+import { defaultCalendlyUrl, buildCustomizedUrl } from '../lib/integrations/calendly'
 
 export interface Props {
   url?: string
 }
 
 const { url = defaultCalendlyUrl } = Astro.props as Props
-const embedId = 'calendly-embed'
+// Build URL with hideDetails to hide profile details on the left and hide GDPR banner
+const customizedUrl = buildCustomizedUrl(url, { hideDetails: true, hideGdprBanner: true })
 ---
 
 <section id='book' class='calendly-section' aria-labelledby='calendly-heading'>
-  <h2 id='calendly-heading'>Ready to Take Control? Book Your Free Consultation.</h2>
-  <div id={embedId} class='calendly-embed' data-calendly-url={url}></div>
+  <div class='calendly-container'>
+    <h2 id='calendly-heading'>Ready to Take Control? Book Your Free Consultation.</h2>
+
+    <div class='calendly-content'>
+      <div class='consultation-details'>
+        <div class='detail-item'>
+          <strong class='detail-label'>1 Hour</strong>
+        </div>
+        <div class='detail-item'>
+          <strong class='detail-subheading'>What to Expect:</strong>
+          <p>
+            We'll start by getting to know you and your situation. You'll share your financial story, goals, and current
+            challenges. We'll discuss where you are right now and where you want to go. Based on your unique situation,
+            I'll recommend a coaching package designed to give you the financial habits you need to win with money.
+          </p>
+        </div>
+        <div class='detail-item'>
+          <strong class='detail-subheading'>You'll Get:</strong>
+          <ul class='benefit-list'>
+            <li>An assessment of your financial goals and current situation</li>
+            <li>A personalized coaching package recommendation</li>
+            <li>Answers to your financial questions</li>
+            <li>A clear understanding of how financial coaching can help you reach your goals</li>
+          </ul>
+        </div>
+        <div class='detail-item'>
+          <strong class='detail-subheading'>Virtual Meeting</strong>
+          <p>Web conferencing details will be sent to you upon confirmation.</p>
+        </div>
+        <div class='detail-item'>
+          <strong class='detail-subheading'>Important Note</strong>
+          <p>
+            If you're married, both spouses should attend. Financial success works best when you're both on the same
+            page!
+          </p>
+        </div>
+      </div>
+
+      <div class='calendly-embed'>
+        <iframe
+          src={customizedUrl}
+          title='Book a free consultation'
+          aria-label='Schedule a consultation with JMJ Financial Coaching'></iframe>
+      </div>
+    </div>
+  </div>
 </section>
-
-<script type='module' define:vars={{ url }}>
-  import { ensureCalendlyInlineEmbed } from '/src/lib/integrations/calendly'
-
-  const embedId = 'calendly-embed'
-  const embed = document.getElementById(embedId)
-  if (embed && url) {
-    const embedHandler = ensureCalendlyInlineEmbed(url, embed)
-    embedHandler.init()
-  }
-</script>
 
 <style>
   .calendly-section {
     padding-block: var(--space-16);
-    background: var(--color-bg-surface);
+    width: 100%;
+  }
+
+  .calendly-container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: var(--space-6);
   }
 
   .calendly-section h2 {
     text-align: center;
-    margin-bottom: var(--space-8);
+    margin-bottom: var(--space-12);
     color: var(--color-primary);
+    font-size: clamp(var(--font-size-xl), 4vw, var(--font-size-3xl));
+    font-weight: 700;
+  }
+
+  .calendly-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    align-items: start;
+  }
+
+  .consultation-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    width: 100%;
+  }
+
+  .detail-item {
+    line-height: 1.7;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+  }
+
+  .detail-label {
+    color: var(--color-primary);
+    font-size: clamp(var(--font-size-xl), 3vw, var(--font-size-2xl));
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+
+  .detail-subheading {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    display: block;
+    margin-bottom: var(--space-2);
+    margin-top: var(--space-4);
+  }
+
+  .detail-item:first-child .detail-subheading {
+    margin-top: 0;
+  }
+
+  .detail-item p {
+    margin: 0;
+    line-height: 1.7;
+  }
+
+  .benefit-list {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .benefit-list li {
+    position: relative;
+    margin-bottom: var(--space-3);
+    padding-left: var(--space-4);
+    line-height: 1.6;
+  }
+
+  .benefit-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+    font-size: var(--font-size-lg);
   }
 
   .calendly-embed {
-    min-height: 700px;
     width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+  }
+
+  .calendly-embed iframe {
+    width: 21rem;
+    height: 37.5rem;
+    border: none;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .calendly-content {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+    }
+
+    .consultation-details {
+      position: sticky;
+      top: var(--space-8);
+    }
   }
 </style>
