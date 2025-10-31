@@ -1,24 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Header from '../components/Header.astro'
-import BookConsultationCTA from '../components/BookConsultationCTA.astro'
+import HeroSection from '../components/HeroSection.astro'
+import ProcessSection from '../components/ProcessSection.astro'
+import ValueAndCalculator from '../components/ValueAndCalculator.astro'
+import FounderStory from '../components/FounderStory.astro'
+import TestimonialsSection from '../components/TestimonialsSection.astro'
+import ContactOptions from '../components/ContactOptions.astro'
+import CalendlyEmbed from '../components/CalendlyEmbed.astro'
+import FloatingMessenger from '../components/FloatingMessenger.astro'
 import { defaultCalendlyUrl } from '../lib/integrations/calendly'
 ---
 
 <BaseLayout seo={{ title: undefined }}>
   <Header calendlyUrl={defaultCalendlyUrl} />
 
-  <main class='site-main'>
-    <section aria-labelledby='hero-heading'>
-      <h1 id='hero-heading'>Build a peaceful, purpose-driven money plan</h1>
-      <p class='hero-lead'>Faith-centered financial coaching to align your money with your mission and values.</p>
-      <p class='hero-cta'>
-        <BookConsultationCTA url={defaultCalendlyUrl} location='hero' variant='primary' label='Book a consultation' />
-      </p>
-    </section>
+  <main>
+    <HeroSection />
+    <ProcessSection />
+    <FounderStory />
+    <ValueAndCalculator />
+    <TestimonialsSection />
+    <ContactOptions />
+    <CalendlyEmbed />
   </main>
 
   <footer class='site-footer'>
-    <p>© {new Date().getFullYear()} JMJ Financial Coaching</p>
+    <div class='footer-content'>
+      <p><strong>JMJ Financial Coaching LLC</strong></p>
+      <p>Bloomington, IL 61704</p>
+      <p>Phone: <a href='tel:309-279-5518'>309-279-5518</a></p>
+      <p>Email: <a href='mailto:jennifer@jmjfinancialcoaching.com'>jennifer@jmjfinancialcoaching.com</a></p>
+      <p>© {new Date().getFullYear()} JMJ Financial Coaching LLC. All Rights Reserved.</p>
+    </div>
   </footer>
+
+  <FloatingMessenger />
 </BaseLayout>
+
+<style>
+  .site-footer {
+    background: var(--color-text);
+    color: var(--color-primary-contrast);
+    padding-block: var(--space-8);
+    margin-top: var(--space-12);
+  }
+
+  .footer-content {
+    max-width: 800px;
+    margin-inline: auto;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .footer-content p {
+    margin-bottom: var(--space-2);
+  }
+
+  .footer-content a {
+    color: var(--color-primary-contrast);
+    text-decoration: underline;
+  }
+
+  .footer-content a:hover {
+    opacity: 0.8;
+  }
+</style>

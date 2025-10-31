@@ -1,0 +1,44 @@
+---
+import { defaultCalendlyUrl } from '../lib/integrations/calendly'
+
+export interface Props {
+  url?: string
+}
+
+const { url = defaultCalendlyUrl } = Astro.props as Props
+const embedId = 'calendly-embed'
+---
+
+<section id='book' class='calendly-section' aria-labelledby='calendly-heading'>
+  <h2 id='calendly-heading'>Ready to Take Control? Book Your Free Consultation.</h2>
+  <div id={embedId} class='calendly-embed' data-calendly-url={url}></div>
+</section>
+
+<script type='module' define:vars={{ url }}>
+  import { ensureCalendlyInlineEmbed } from '/src/lib/integrations/calendly'
+
+  const embedId = 'calendly-embed'
+  const embed = document.getElementById(embedId)
+  if (embed && url) {
+    const embedHandler = ensureCalendlyInlineEmbed(url, embed)
+    embedHandler.init()
+  }
+</script>
+
+<style>
+  .calendly-section {
+    padding-block: var(--space-16);
+    background: var(--color-bg-surface);
+  }
+
+  .calendly-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-8);
+    color: var(--color-primary);
+  }
+
+  .calendly-embed {
+    min-height: 700px;
+    width: 100%;
+  }
+</style>

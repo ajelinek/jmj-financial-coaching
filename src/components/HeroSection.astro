@@ -1,0 +1,99 @@
+---
+import BookConsultationCTA from './BookConsultationCTA.astro'
+import { defaultCalendlyUrl } from '../lib/integrations/calendly'
+---
+
+<section class='hero-section' aria-labelledby='hero-heading'>
+  <div class='hero-background'>
+    <img
+      src='/public/logos-and-images/jmj3_JMJ-02.svg'
+      alt='Jennifer from JMJ Financial Coaching'
+      width='1920'
+      height='1080'
+      loading='eager'
+      class='hero-image'
+    />
+    <div class='hero-overlay'></div>
+  </div>
+  <div class='hero-content'>
+    <h1 id='hero-heading' class='hero-title'>JMJ Financial Coaching LLC</h1>
+    <p class='hero-tagline'>Helping you achieve financial peace one step at a time.</p>
+    <div class='hero-cta'>
+      <BookConsultationCTA url={defaultCalendlyUrl} location='hero' variant='primary' label='Book Free Consult' />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--color-primary-contrast);
+  }
+
+  .hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: var(--space-8);
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: var(--space-4);
+    color: var(--color-primary-contrast);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+  }
+
+  .hero-tagline {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    margin-bottom: var(--space-6);
+    color: var(--color-primary-contrast);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-cta {
+    margin-top: var(--space-6);
+  }
+
+  .hero-cta .button {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    padding: 1.25rem var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      min-height: 500px;
+    }
+  }
+</style>

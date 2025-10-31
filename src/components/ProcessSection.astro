@@ -1,0 +1,136 @@
+---
+const steps = [
+  {
+    number: 1,
+    title: 'Book a Consultation',
+    description:
+      "This is a hassle-free, no-obligation call to get to know each other a bit. It gives me a chance to hear more about your situation and specific needs, and gives you a chance to see if we'll be a good fit.",
+  },
+  {
+    number: 2,
+    title: 'Create a Plan Together',
+    description:
+      "Once we outline your areas of biggest need, we'll work together to create a plan to help you reach your goals.",
+  },
+  {
+    number: 3,
+    title: 'Work the Plan Together',
+    description:
+      "True change comes when behavior is adjusted, not simply understanding concepts. I'm here to coach you along the way to help you reach your goals.",
+  },
+]
+---
+
+<section class='process-section' aria-labelledby='process-heading'>
+  <h2 id='process-heading'>It's That Easy: Just 3 Simple Steps</h2>
+  <div class='process-steps'>
+    {
+      steps.map((step, index) => (
+        <article class='process-step'>
+          <div class='step-header'>
+            <span class='step-number'>{step.number}</span>
+            {index < steps.length - 1 && <span class='step-connector' />}
+          </div>
+          <h3 class='step-title'>{step.title}</h3>
+          <p class='step-description'>{step.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .process-section {
+    padding-block: var(--space-16);
+    background: linear-gradient(180deg, var(--color-bg-surface), rgba(74, 155, 142, 0.08));
+  }
+
+  .process-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    font-size: var(--font-size-4xl);
+    color: var(--color-primary);
+  }
+
+  .process-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--space-8);
+    max-width: 1100px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  .process-step {
+    flex: 1;
+    text-align: center;
+    padding: 0 var(--space-4);
+    max-width: 320px;
+  }
+
+  .step-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-6);
+    position: relative;
+  }
+
+  .step-number {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-full);
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    font-family: var(--font-serif);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step-connector {
+    position: absolute;
+    left: calc(50% + 24px);
+    top: 50%;
+    right: calc(-50% - 24px);
+    height: 2px;
+    background: var(--color-accent);
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .step-title {
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .step-description {
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+  }
+
+  @media (max-width: 768px) {
+    .process-steps {
+      flex-direction: column;
+      gap: var(--space-12);
+    }
+
+    .step-connector {
+      display: none;
+    }
+
+    .process-step {
+      max-width: 100%;
+    }
+  }
+</style>

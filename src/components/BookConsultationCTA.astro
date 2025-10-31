@@ -6,7 +6,7 @@ export interface Props {
   location: 'hero' | 'header' | 'section'
 }
 
-const { url, label = 'Book a consultation', variant = 'primary', location } = Astro.props as Props
+const { url, label = 'Book Free Consult', variant = 'primary', location } = Astro.props as Props
 const elementId = `book-consultation-cta-${location}`
 ---
 
@@ -46,6 +46,29 @@ const elementId = `book-consultation-cta-${location}`
 </script>
 
 <style>
+  .button {
+    appearance: none;
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border: 0;
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-6);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+
+  .button:hover {
+    background: var(--color-primary-secondary);
+    text-decoration: none;
+  }
+
+  .button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
   .link-inline {
     appearance: none;
     background: transparent;
@@ -55,5 +78,9 @@ const elementId = `book-consultation-cta-${location}`
     cursor: pointer;
     padding: 0;
     font: inherit;
+  }
+
+  .link-inline:hover {
+    color: var(--color-primary);
   }
 </style>

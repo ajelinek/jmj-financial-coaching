@@ -1,0 +1,81 @@
+---
+
+---
+
+<section class='founder-story' aria-labelledby='story-heading'>
+  <h2 id='story-heading'>My Story</h2>
+  <div class='story-content'>
+    <div class='story-image'>
+      <img
+        src='/logos-and-images/Business Photo - Small.JPG'
+        alt='Jennifer, founder of JMJ Financial Coaching'
+        width='400'
+        height='400'
+        loading='lazy'
+      />
+    </div>
+    <div class='story-text'>
+      <p>
+        Three years ago, I suddenly lost my job and our household income was cut in half overnight. We were really
+        scared. But putting together a budget changed everything. We made some lifestyle changes, and I got to achieve
+        our dream of me being a stay at home mom.
+      </p>
+      <p>
+        That experience of fear and then finding peace through taking control of our money is why I became a financial
+        coach. I want to help you find that same peace and reach your goals, just like we did.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .founder-story {
+    padding-block: var(--space-16);
+    background-color: var(--color-bg-muted, #fafafa);
+  }
+
+  .founder-story h2 {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+    color: var(--color-primary);
+  }
+
+  .story-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-8);
+    align-items: center;
+    max-width: 1000px;
+    margin-inline: auto;
+  }
+
+  .story-image {
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+  }
+
+  .story-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .story-text {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    color: var(--color-text);
+  }
+
+  .story-text p {
+    margin-bottom: var(--space-4);
+  }
+
+  @media (max-width: 768px) {
+    .story-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

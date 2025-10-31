@@ -1,0 +1,117 @@
+---
+
+---
+
+<section class='contact-options' aria-labelledby='contact-heading'>
+  <h2 id='contact-heading'>Have Questions? Contact Me.</h2>
+  <div class='contact-grid'>
+    <a href='tel:309-279-5518' class='contact-option' aria-label='Call Jennifer at 309-279-5518'>
+      <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+        <path
+          d='M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z'
+          fill='currentColor'></path>
+      </svg>
+      <span class='contact-option-title'>Call Me</span>
+      <span class='contact-option-subtitle'>(Click to Call)</span>
+    </a>
+
+    <a href='mailto:jennifer@jmjfinancialcoaching.com' class='contact-option' aria-label='Email Jennifer'>
+      <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+        <path
+          d='M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z'
+          fill='currentColor'></path>
+      </svg>
+      <span class='contact-option-title'>Email Me</span>
+      <span class='contact-option-subtitle'>(Send a Message)</span>
+    </a>
+
+    <button
+      type='button'
+      class='contact-option'
+      aria-label='Scroll to booking section'
+      onclick="document.getElementById('book')?.scrollIntoView({ behavior: 'smooth', block: 'start' })"
+    >
+      <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+        <path
+          d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z'
+          fill='currentColor'></path>
+      </svg>
+      <span class='contact-option-title'>Book Free Consult</span>
+      <span class='contact-option-subtitle'>(Schedule Now)</span>
+    </button>
+  </div>
+</section>
+
+<style>
+  .contact-options {
+    padding-block: var(--space-12);
+  }
+
+  .contact-options h2 {
+    text-align: center;
+    margin-bottom: var(--space-8);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-6);
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .contact-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-6);
+    background: var(--color-bg-surface);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease;
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .contact-option:hover {
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 44, 156, 0.2);
+    text-decoration: none;
+  }
+
+  .contact-option:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .contact-option svg {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-2);
+  }
+
+  .contact-option-title {
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+  }
+
+  .contact-option-subtitle {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-option {
+      transition: none;
+    }
+    .contact-option:hover {
+      transform: none;
+    }
+  }
+</style>

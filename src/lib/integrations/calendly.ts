@@ -39,6 +39,10 @@ function loadCalendlyAssetsOnce(hideLoader: boolean): void {
       style.textContent = `
 				.calendly-overlay .calendly-spinner { display: none !important; }
 				.calendly-overlay .calendly-loading-spinner { display: none !important; }
+				.calendly-inline-widget .calendly-spinner { display: none !important; }
+				.calendly-inline-widget .calendly-loading-spinner { display: none !important; }
+				.calendly-embed .calendly-spinner { display: none !important; }
+				.calendly-embed .calendly-loading-spinner { display: none !important; }
 			`
       document.head.appendChild(style)
     }
@@ -91,15 +95,15 @@ function getThemeFromCss(): ThemeOptions {
     return {}
   }
   const styles = getComputedStyle(document.documentElement)
-  const primary = styles.getPropertyValue('--color-primary') || '#0ea5e9'
-  const text = styles.getPropertyValue('--color-text') || '#0f172a'
+  const primary = styles.getPropertyValue('--color-primary') || '#8b2c9c'
+  const text = styles.getPropertyValue('--color-text') || '#15202b'
   const bg = styles.getPropertyValue('--color-bg') || '#ffffff'
-  const primaryHex = primary.slice(0, 3) === 'rgb' ? rgbToHex(primary) : normalizeHex(primary, '0ea5e9')
-  const textHex = text.slice(0, 3) === 'rgb' ? rgbToHex(text) : normalizeHex(text, '0f172a')
+  const primaryHex = primary.slice(0, 3) === 'rgb' ? rgbToHex(primary) : normalizeHex(primary, '8b2c9c')
+  const textHex = text.slice(0, 3) === 'rgb' ? rgbToHex(text) : normalizeHex(text, '15202b')
   const bgHex = bg.slice(0, 3) === 'rgb' ? rgbToHex(bg) : normalizeHex(bg, 'ffffff')
   return {
-    primaryColor: primaryHex ?? '0ea5e9',
-    textColor: textHex ?? '0f172a',
+    primaryColor: primaryHex ?? '8b2c9c',
+    textColor: textHex ?? '15202b',
     backgroundColor: bgHex ?? 'ffffff',
   }
 }
@@ -168,6 +172,46 @@ export function ensureCalendlyPopup(input: EnsureInput): { open: () => void } {
       const interval = window.setInterval(() => {
         attempts += 1
         if (tryOpen() || attempts >= maxAttempts) {
+          window.clearInterval(interval)
+        }
+      }, 100)
+    },
+  }
+}
+
+export function ensureCalendlyInlineEmbed(url: string, parentElement: HTMLElement): { init: () => void } {
+  return {
+    init: () => {
+      if (typeof window === 'undefined' || typeof document === 'undefined') return
+      loadCalendlyAssetsOnce(true)
+
+      const tryInit = () => {
+        const CalendlyGlobal = (
+          window as unknown as {
+            Calendly?: {
+              initInlineWidget?: (opts: { url: string; parentElement: HTMLElement }) => void
+            }
+          }
+        ).Calendly
+
+        if (CalendlyGlobal && typeof CalendlyGlobal.initInlineWidget === 'function') {
+          CalendlyGlobal.initInlineWidget({
+            url,
+            parentElement,
+          })
+          return true
+        }
+        return false
+      }
+
+      if (tryInit()) return
+
+      // Poll for script readiness
+      let attempts = 0
+      const maxAttempts = 30
+      const interval = window.setInterval(() => {
+        attempts += 1
+        if (tryInit() || attempts >= maxAttempts) {
           window.clearInterval(interval)
         }
       }, 100)

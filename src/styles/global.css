@@ -134,6 +134,12 @@ h3 {
   a:hover {
     text-decoration: underline;
   }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
   h1 {
     font-size: var(--font-size-4xl);
     line-height: 1.2;

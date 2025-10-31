@@ -15,7 +15,7 @@ const { calendlyUrl } = Astro.props as Props
     </a>
   </nav>
   <div class='site-header-cta'>
-    <BookConsultationCTA url={calendlyUrl} location='header' variant='inline' label='Book consultation' />
+    <BookConsultationCTA url={calendlyUrl} location='header' variant='primary' label='Book Free Consult' />
   </div>
 </header>
 
@@ -25,5 +25,19 @@ const { calendlyUrl } = Astro.props as Props
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    padding-block: var(--space-4);
+    background: linear-gradient(180deg, var(--color-bg), rgba(139, 44, 156, 0.03));
+    border-bottom: 2px solid rgba(139, 44, 156, 0.1);
+  }
+
+  .site-header nav a {
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+  }
+
+  .site-header nav a:hover {
+    color: var(--color-primary-secondary);
+    text-decoration: none;
   }
 </style>

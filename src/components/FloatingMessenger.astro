@@ -1,0 +1,59 @@
+---
+
+---
+
+<a
+  href='https://m.me/105961640819095'
+  target='_blank'
+  rel='noopener noreferrer'
+  class='floating-messenger'
+  aria-label='Chat with us on Facebook Messenger'
+>
+  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' aria-hidden='true'>
+    <path
+      d='M20 2H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h4v4l4-4h8c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z'
+      fill='currentColor'></path>
+  </svg>
+</a>
+
+<style>
+  .floating-messenger {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 56px;
+    height: 56px;
+    background: var(--color-primary);
+    color: var(--color-primary-contrast);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: var(--z-floating);
+    transition:
+      background-color 0.2s ease,
+      transform 0.2s ease;
+    text-decoration: none;
+  }
+
+  .floating-messenger:hover {
+    background: var(--color-primary-secondary);
+    transform: scale(1.05);
+    text-decoration: none;
+  }
+
+  .floating-messenger:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floating-messenger {
+      transition: none;
+    }
+    .floating-messenger:hover {
+      transform: none;
+    }
+  }
+</style>

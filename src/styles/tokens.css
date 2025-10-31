@@ -1,12 +1,22 @@
 :root {
-  /* Colors */
-  --color-bg: #ffffff;
-  --color-surface: #f7f7f9;
-  --color-text: #0f172a;
-  --color-text-muted: #475569;
-  --color-primary: #0ea5e9;
+  /* Brand Colors */
+  --color-primary: #8b2c9c; /* rich purple - CTAs, active states, brand highlights */
+  --color-primary-secondary: #6b1a7a; /* deep purple - hover states, emphasis elements */
+  --color-accent: #4a9b8e; /* muted teal - success states, positive financial indicators */
   --color-primary-contrast: #ffffff;
-  --color-border: #e2e8f0;
+
+  /* Semantic Colors */
+  --color-success: #4a9b8e; /* muted teal - debt payoff progress, positive testimonials */
+  --color-warning: #f59e0b; /* amber - important notices, cautionary information */
+  --color-error: #ef4444; /* red - form validation, critical alerts */
+  --color-info: #3b82f6; /* blue - informational content, educational materials */
+
+  /* Neutral Palette */
+  --color-bg: #ffffff; /* white - clean, professional backgrounds */
+  --color-surface: #fafafa; /* light background for sections */
+  --color-text: #15202b; /* dark blue-gray - primary text for readability */
+  --color-text-muted: #6b7280; /* secondary text */
+  --color-border: #e7e7e7; /* light gray - borders, subtle elements */
 
   /* Spacing (4px scale) */
   --space-0: 0;
@@ -20,8 +30,9 @@
   --space-16: 4rem; /* 64px */
 
   /* Typography */
-  --font-sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue',
-    Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.125rem;
@@ -40,6 +51,7 @@
   --z-base: 1;
   --z-overlay: 10;
   --z-modal: 100;
+  --z-floating: 50; /* for floating buttons */
 }
 
 /* Semantic tokens and legacy aliases (kept to avoid breaking changes) */
@@ -52,6 +64,11 @@
   /* Brand semantics */
   --color-brand: var(--color-primary);
   --color-brand-contrast: var(--color-primary-contrast);
+  --color-brand-secondary: var(--color-primary-secondary);
+  --color-brand-accent: var(--color-accent);
+
+  /* Border semantic */
+  /* --color-border already defined above */
 
   /* Spacing semantics */
   --spacing-0: var(--space-0);

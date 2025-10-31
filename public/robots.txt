@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
 
-# TODO (future): Add Sitemap: once sitemap generation is implemented
-
-
+Sitemap: https://ajelinek.github.io/jmj-financial-coaching/sitemap-index.xml
