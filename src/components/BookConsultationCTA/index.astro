@@ -25,8 +25,14 @@ const elementId = `book-consultation-cta-${location}`
   if (button) {
     button.addEventListener('click', () => {
       const targetSection = document.getElementById('book')
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const header = document.querySelector('header')
+      if (targetSection && header) {
+        const headerHeight = header.offsetHeight
+        const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        })
       }
     })
   }

@@ -1,33 +1,96 @@
 .siteHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  background: white;
+  border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+}
+
+.headerBackground {
+  display: none;
+}
+
+.headerBackgroundImage {
+  display: none;
+}
+
+.headerOverlay {
+  display: none;
+}
+
+.headerContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
   padding-block: var(--space-4);
-  background: linear-gradient(180deg, var(--color-bg), color-mix(in srgb, var(--color-primary) 3%, transparent));
-  border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
+  padding-inline: var(--space-6);
+  position: relative;
+  z-index: 1;
 }
 
-.siteHeader nav a {
+.headerContent nav a {
   color: var(--color-primary);
   font-weight: 600;
   font-size: var(--font-size-lg);
   transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
 }
 
-.siteHeader nav a:hover {
+.logoIcon {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.headerContent nav a:hover {
   color: var(--color-primary-secondary);
   text-decoration: none;
 }
 
-.siteHeader nav a:focus-visible {
+.headerContent nav a:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
   border-radius: var(--radius-sm);
 }
 
+@media (max-width: 768px) {
+  .headerContent {
+    padding-block: var(--space-3);
+    padding-inline: var(--space-4);
+    gap: var(--space-2);
+  }
+
+  .headerContent nav a {
+    font-size: var(--font-size-base);
+  }
+
+  .headerContent nav a strong {
+    display: block;
+    line-height: 1.2;
+  }
+
+  .logoIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .headerContent :global(.button) {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .siteHeader nav a {
+  .headerContent nav a {
     transition: none;
   }
 }

@@ -26,6 +26,7 @@ const canonicalUrl = seo?.canonical ?? new URL(Astro.url.pathname, Astro.site).t
     <title>{pageTitle}</title>
     <meta name='description' content={seo?.description ?? defaultDescription} />
     <link rel='canonical' href={canonicalUrl} />
+    <link rel='icon' type='image/svg+xml' href='/logos-and-images/jmj3_JMJ-02.jpg' />
 
     <!-- Google Fonts -->
     <link rel='preconnect' href='https://fonts.googleapis.com' />

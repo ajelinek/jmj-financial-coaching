@@ -4,13 +4,34 @@ import BookConsultationCTA from '../BookConsultationCTA/index.astro'
 ---
 
 <header class={s.siteHeader}>
-  <nav aria-label='Primary'>
-    <a href='/' aria-label='JMJ Financial Coaching home'>
-      <strong>JMJ Financial Coaching</strong>
-    </a>
-  </nav>
-  <div>
-    <BookConsultationCTA location='header' variant='primary' label='Book Free Consult' />
+  <div class={s.headerBackground}>
+    <img
+      src='/logos-and-images/jmj3_JMJ-02.svg'
+      alt=''
+      width='1920'
+      height='1080'
+      loading='eager'
+      class={s.headerBackgroundImage}
+      aria-hidden='true'
+    />
+    <div class={s.headerOverlay}></div>
+  </div>
+  <div class={s.headerContent}>
+    <nav aria-label='Primary'>
+      <a href='/' aria-label='JMJ Financial Coaching home'>
+        <img
+          src='/logos-and-images/jmj3_JMJ-02.jpg'
+          alt=''
+          width='60'
+          height='60'
+          class={s.logoIcon}
+          aria-hidden='true'
+        />
+        <strong>JMJ Financial Coaching LLC</strong>
+      </a>
+    </nav>
+    <div>
+      <BookConsultationCTA location='header' variant='primary' label='Book Free Consult' />
+    </div>
   </div>
 </header>
-

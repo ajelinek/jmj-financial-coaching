@@ -96,6 +96,8 @@
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-text);
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .contactCta {
@@ -111,13 +113,29 @@
     padding: var(--space-8);
   }
 
+  .contactItem {
+    min-width: 0;
+  }
+
+  .contactDetails {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .contactValue {
+    font-size: var(--font-size-base);
+  }
+
   .contactCta {
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .contactCta :global(.button) {
     width: 100%;
     padding: var(--space-4) var(--space-6);
+    max-width: 100%;
   }
 }
 
