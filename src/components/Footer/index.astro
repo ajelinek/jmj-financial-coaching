@@ -1,0 +1,40 @@
+---
+import s from './styles.module.css'
+import LocationIcon from '../icons/LocationIcon.astro'
+import PhoneIcon from '../icons/PhoneIcon.astro'
+import EmailIcon from '../icons/EmailIcon.astro'
+---
+
+<footer class={s.siteFooter}>
+  <div class={s.footerContainer}>
+    <div class={s.footerContent}>
+      <div class={`${s.footerSection} ${s.footerCompany}`}>
+        <h3 class={s.footerHeading}>JMJ Financial Coaching LLC</h3>
+        <p class={s.footerLocation}>
+          <LocationIcon width='16' height='16' />
+          <span>Bloomington, IL 61704</span>
+        </p>
+      </div>
+
+      <div class={`${s.footerSection} ${s.footerContact}`}>
+        <div class={s.footerContactItem}>
+          <a href='tel:309-279-5518' class={s.footerLink} aria-label='Call Jennifer at 309-279-5518'>
+            <PhoneIcon width='20' height='20' />
+            <span>309-279-5518</span>
+          </a>
+        </div>
+        <div class={s.footerContactItem}>
+          <a href='mailto:jennifer@jmjfinancialcoaching.com' class={s.footerLink} aria-label='Email Jennifer'>
+            <EmailIcon width='20' height='20' />
+            <span>jennifer@jmjfinancialcoaching.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class={s.footerCopyright}>
+      <p>© {new Date().getFullYear()} JMJ Financial Coaching LLC. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+

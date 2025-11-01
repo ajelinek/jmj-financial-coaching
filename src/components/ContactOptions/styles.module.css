@@ -1,4 +1,4 @@
-@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../styles/composition.module.css';
+@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../../styles/composition.module.css';
 
 .contactOptions {
   padding-block: var(--section-padding-block);
@@ -52,9 +52,7 @@
   text-decoration: none;
   color: var(--color-text);
   border-radius: var(--radius-md);
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .contactItem:hover {

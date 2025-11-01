@@ -1,7 +1,7 @@
 ---
-import styles from './TestimonialsSection.module.css'
-import QuoteIcon from './icons/QuoteIcon.astro'
-import StarIcon from './icons/StarIcon.astro'
+import s from './styles.module.css'
+import QuoteIcon from '../icons/QuoteIcon.astro'
+import StarIcon from '../icons/StarIcon.astro'
 
 const testimonials = [
   {
@@ -20,24 +20,24 @@ const testimonials = [
 ]
 ---
 
-<section class={styles.testimonialsSection} aria-labelledby='testimonials-heading'>
-  <div class={styles.testimonialsContainer}>
-    <div class={styles.testimonialsHeader}>
-      <div class={styles.headerIconWrapper}>
-        <QuoteIcon width='64' height='64' class={styles.headerSectionIcon} />
+<section class={s.testimonialsSection} aria-labelledby='testimonials-heading'>
+  <div class={s.testimonialsContainer}>
+    <div class={s.testimonialsHeader}>
+      <div class={s.headerIconWrapper}>
+        <QuoteIcon width='64' height='64' class={s.headerSectionIcon} />
       </div>
-      <h2 id='testimonials-heading' class={styles.testimonialsHeaderH2}>What My Clients Say</h2>
+      <h2 id='testimonials-heading' class={s.testimonialsHeaderH2}>What My Clients Say</h2>
     </div>
-    <div class={styles.testimonialsGrid}>
+    <div class={s.testimonialsGrid}>
       {
         testimonials.map(testimonial => (
-          <blockquote class={styles.testimonialCard}>
-            <div class={styles.quoteIcon}>
+          <blockquote class={s.testimonialCard}>
+            <div class={s.quoteIcon}>
               <QuoteIcon width='24' height='24' />
             </div>
-            <p class={styles.testimonialQuote}>{testimonial.quote}</p>
-            <footer class={styles.testimonialAuthor}>
-              <div class={styles.starRating}>
+            <p class={s.testimonialQuote}>{testimonial.quote}</p>
+            <footer class={s.testimonialAuthor}>
+              <div class={s.starRating}>
                 <StarIcon width='16' height='16' />
                 <StarIcon width='16' height='16' />
                 <StarIcon width='16' height='16' />

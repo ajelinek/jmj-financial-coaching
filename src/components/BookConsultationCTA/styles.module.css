@@ -1,4 +1,4 @@
-@value primaryButtonBase from '../styles/composition.module.css';
+@value primaryButtonBase from '../../styles/composition.module.css';
 
 .button {
   composes: primaryButtonBase;

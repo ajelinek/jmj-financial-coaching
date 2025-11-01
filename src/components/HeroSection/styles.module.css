@@ -1,0 +1,72 @@
+.heroSection {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--color-primary-contrast);
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-8);
+  max-width: 800px;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  margin-bottom: var(--space-4);
+  color: var(--color-primary-contrast);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.heroTagline {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin-bottom: var(--space-6);
+  color: var(--color-primary-contrast);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroCta {
+  margin-top: var(--space-6);
+}
+
+.heroCta :global(.button) {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  padding: 1.25rem var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    min-height: 500px;
+  }
+}
+

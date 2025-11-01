@@ -1,0 +1,16 @@
+---
+import s from './styles.module.css'
+import BookConsultationCTA from '../BookConsultationCTA/index.astro'
+---
+
+<header class={s.siteHeader}>
+  <nav aria-label='Primary'>
+    <a href='/' aria-label='JMJ Financial Coaching home'>
+      <strong>JMJ Financial Coaching</strong>
+    </a>
+  </nav>
+  <div>
+    <BookConsultationCTA location='header' variant='primary' label='Book Free Consult' />
+  </div>
+</header>
+

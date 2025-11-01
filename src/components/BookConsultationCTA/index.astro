@@ -1,5 +1,5 @@
 ---
-import styles from './BookConsultationCTA.module.css';
+import s from './styles.module.css'
 
 export interface Props {
   label?: string
@@ -13,7 +13,7 @@ const elementId = `book-consultation-cta-${location}`
 
 <button
   id={elementId}
-  class={variant === 'primary' ? styles.button : styles.linkInline}
+  class={variant === 'primary' ? s.button : s.linkInline}
   type='button'
   aria-label={`${label} - navigate to booking section`}
 >

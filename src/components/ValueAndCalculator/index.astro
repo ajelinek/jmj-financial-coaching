@@ -1,0 +1,49 @@
+---
+import s from './styles.module.css'
+import TeamIcon from '../icons/TeamIcon.astro'
+import ArrowRightIcon from '../icons/ArrowRightIcon.astro'
+import CalculatorIcon from '../icons/CalculatorIcon.astro'
+---
+
+<section class={s.valueAndCalculator} aria-labelledby='combined-heading'>
+  <div class={s.valueCalculatorWrapper}>
+    <div class={s.combinedContainer}>
+      <!-- Left side: Coaching Value -->
+      <div class={s.coachingSection}>
+        <div class={s.coachingSectionIconWrapper}>
+          <TeamIcon width='64' height='64' class={s.coachingSectionSectionIcon} />
+        </div>
+        <h2 id='combined-heading' class={s.coachingSectionH2}>Guidance & Accountability</h2>
+        <div class={s.pullQuote}>
+          <span class={s.quoteStat}>80%</span>
+          <span class={s.quoteText}>behavior</span>
+          <span class={s.quoteStat}>20%</span>
+          <span class={s.quoteText}>knowledge</span>
+        </div>
+        <p class={s.coachingSectionP}>
+          Build the habits you need to win with money, with personalized coaching every step of the way.
+        </p>
+      </div>
+
+      <!-- Divider -->
+      <div class={s.sectionDivider}>
+        <ArrowRightIcon width='24' height='24' />
+      </div>
+
+      <!-- Right side: Calculator -->
+      <div class={s.calculatorSection}>
+        <div class={s.calculatorSectionIconWrapper}>
+          <CalculatorIcon width='64' height='64' class={s.calculatorSectionSectionIcon} />
+        </div>
+        <h2 class={s.calculatorSectionH2}>Visualize Zero Debt</h2>
+        <p class={s.calculatorSectionP}>
+          See how long minimum payments will take. Then discover how coaching accelerates your journey.
+        </p>
+        <a href='https://mydebtfree.coach/jmj' target='_blank' rel='noopener noreferrer' class={s.calculatorButton}>
+          <ArrowRightIcon width='20' height='20' />
+          Launch Calculator
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

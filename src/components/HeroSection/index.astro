@@ -1,0 +1,26 @@
+---
+import s from './styles.module.css'
+import BookConsultationCTA from '../BookConsultationCTA/index.astro'
+---
+
+<section class={s.heroSection} aria-labelledby='hero-heading'>
+  <div class={s.heroBackground}>
+    <img
+      src='/logos-and-images/jmj3_JMJ-02.svg'
+      alt='Jennifer from JMJ Financial Coaching'
+      width='1920'
+      height='1080'
+      loading='eager'
+      class={s.heroImage}
+    />
+    <div class={s.heroOverlay}></div>
+  </div>
+  <div class={s.heroContent}>
+    <h1 id='hero-heading' class={s.heroTitle}>JMJ Financial Coaching LLC</h1>
+    <p class={s.heroTagline}>Helping you achieve financial peace one step at a time.</p>
+    <div class={s.heroCta}>
+      <BookConsultationCTA location='hero' variant='primary' label='Book Free Consult' />
+    </div>
+  </div>
+</section>
+

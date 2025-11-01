@@ -1,0 +1,62 @@
+---
+import s from './styles.module.css'
+import { defaultCalendlyUrl, buildCustomizedUrl } from '../../lib/integrations/calendly'
+
+export interface Props {
+  url?: string
+}
+
+const { url = defaultCalendlyUrl } = Astro.props as Props
+// Build URL with hideDetails to hide profile details on the left and hide GDPR banner
+const customizedUrl = buildCustomizedUrl(url, { hideDetails: true, hideGdprBanner: true })
+---
+
+<section id='book' class={s.calendlySection} aria-labelledby='calendly-heading'>
+  <div class={s.calendlyContainer}>
+    <h2 id='calendly-heading'>Ready to Take Control? Book Your Free Consultation.</h2>
+
+    <div class={s.calendlyContent}>
+      <div class={s.consultationDetails}>
+        <div class={s.detailItem}>
+          <strong class={s.detailLabel}>1 Hour</strong>
+        </div>
+        <div class={s.detailItem}>
+          <strong class={s.detailSubheading}>What to Expect:</strong>
+          <p>
+            We'll start by getting to know you and your situation. You'll share your financial story, goals, and current
+            challenges. We'll discuss where you are right now and where you want to go. Based on your unique situation,
+            I'll recommend a coaching package designed to give you the financial habits you need to win with money.
+          </p>
+        </div>
+        <div class={s.detailItem}>
+          <strong class={s.detailSubheading}>You'll Get:</strong>
+          <ul class={s.benefitList}>
+            <li>An assessment of your financial goals and current situation</li>
+            <li>A personalized coaching package recommendation</li>
+            <li>Answers to your financial questions</li>
+            <li>A clear understanding of how financial coaching can help you reach your goals</li>
+          </ul>
+        </div>
+        <div class={s.detailItem}>
+          <strong class={s.detailSubheading}>Virtual Meeting</strong>
+          <p>Web conferencing details will be sent to you upon confirmation.</p>
+        </div>
+        <div class={s.detailItem}>
+          <strong class={s.detailSubheading}>Important Note</strong>
+          <p>
+            If you're married, both spouses should attend. Financial success works best when you're both on the same
+            page!
+          </p>
+        </div>
+      </div>
+
+      <div class={s.calendlyEmbed}>
+        <iframe
+          src={customizedUrl}
+          title='Book a free consultation'
+          aria-label='Schedule a consultation with JMJ Financial Coaching'></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+

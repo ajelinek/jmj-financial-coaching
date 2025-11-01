@@ -1,0 +1,25 @@
+.valueProposition {
+  padding-block: var(--section-padding-block);
+  width: 100%;
+  background: var(--gradient-primary-surface);
+}
+
+.valueContainer {
+  max-width: 900px;
+  margin-inline: auto;
+  text-align: center;
+  padding-inline: var(--section-container-padding);
+}
+
+.valueProposition :global(h2) {
+  margin-bottom: var(--space-8);
+  font-size: clamp(var(--font-size-2xl), 4vw, var(--font-size-3xl));
+  color: var(--color-primary);
+}
+
+.valueText {
+  font-size: var(--font-size-lg);
+  line-height: 1.8;
+  color: var(--color-text);
+}
+

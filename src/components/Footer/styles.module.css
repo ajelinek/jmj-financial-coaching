@@ -1,0 +1,120 @@
+.siteFooter {
+  width: 100%;
+  background: var(--color-text);
+  color: var(--color-primary-contrast);
+  padding-block: var(--space-12);
+  margin-top: var(--space-12);
+}
+
+.footerContainer {
+  max-width: min(90%, 72rem);
+  margin-inline: auto;
+  padding-inline: var(--section-container-padding);
+}
+
+.footerContent {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footerSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.footerCompany {
+  /* Company section - inherits from footerSection */
+}
+
+.footerHeading {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin: 0;
+  color: var(--color-primary-contrast);
+}
+
+.footerLocation {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+.footerLocation svg {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.footerContact {
+  gap: var(--space-3);
+}
+
+.footerContactItem {
+  display: flex;
+  align-items: center;
+}
+
+.footerLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-primary-contrast);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  padding: var(--space-2) 0;
+}
+
+.footerLink:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+.footerLink:focus-visible {
+  outline: 2px solid var(--color-primary-contrast);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.footerLink svg {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.footerLink span {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.footerCopyright {
+  text-align: center;
+  padding-top: var(--space-4);
+}
+
+.footerCopyright p {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .footerContent {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footerLink {
+    transition: none;
+  }
+}
+

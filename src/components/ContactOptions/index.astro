@@ -1,0 +1,55 @@
+---
+import s from './styles.module.css'
+import BookConsultationCTA from '../BookConsultationCTA/index.astro'
+import FacebookMessengerIcon from '../icons/FacebookMessengerIcon.astro'
+import MailIcon from '../icons/MailIcon.astro'
+import PhoneIcon from '../icons/PhoneIcon.astro'
+import EmailIcon from '../icons/EmailIcon.astro'
+---
+
+<section class={s.contactOptions} aria-labelledby='contact-heading'>
+  <div class={s.contactWrapper}>
+    <div class={s.contactHeader}>
+      <div class={s.headerIconWrapper}>
+        <MailIcon width='64' height='64' class={s.headerSectionIcon} />
+      </div>
+      <h2 id='contact-heading' class={s.contactHeaderH2}>Have Questions? Contact Me.</h2>
+    </div>
+    <div class={s.contactContainer}>
+      <div class={s.contactInfo}>
+        <a href='tel:309-279-5518' class={s.contactItem} aria-label='Call Jennifer at 309-279-5518'>
+          <PhoneIcon width='24' height='24' />
+          <div class={s.contactDetails}>
+            <span class={s.contactLabel}>Phone</span>
+            <span class={s.contactValue}>309-279-5518</span>
+          </div>
+        </a>
+
+        <a href='mailto:jennifer@jmjfinancialcoaching.com' class={s.contactItem} aria-label='Email Jennifer'>
+          <EmailIcon width='24' height='24' />
+          <div class={s.contactDetails}>
+            <span class={s.contactLabel}>Email</span>
+            <span class={s.contactValue}>jennifer@jmjfinancialcoaching.com</span>
+          </div>
+        </a>
+
+        <a
+          href='https://m.me/105961640819095'
+          target='_blank'
+          rel='noopener noreferrer'
+          class={s.contactItem}
+          aria-label='Chat with us on Facebook Messenger'
+        >
+          <FacebookMessengerIcon width='24' height='24' class='messenger-icon' />
+          <div class={s.contactDetails}>
+            <span class={s.contactLabel}>Facebook Messenger</span>
+            <span class={s.contactValue}>Chat with us</span>
+          </div>
+        </a>
+      </div>
+      <div class={s.contactCta}>
+        <BookConsultationCTA location='section' variant='primary' label='Book Free Consultation' />
+      </div>
+    </div>
+  </div>
+</section>

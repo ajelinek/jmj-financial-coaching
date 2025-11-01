@@ -1,4 +1,4 @@
-@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../styles/composition.module.css';
+@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../../styles/composition.module.css';
 
 .testimonialsSection {
   padding-block: var(--section-padding-block);
@@ -44,9 +44,7 @@
   border: 2px solid var(--color-primary);
   margin: 0;
   box-shadow: var(--shadow-card);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   display: flex;
   flex-direction: column;

@@ -1,4 +1,4 @@
-@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../styles/composition.module.css';
+@value sectionIconWrapper, sectionIcon, sectionContainer, sectionHeader from '../../styles/composition.module.css';
 
 .founderStory {
   padding-block: var(--section-padding-block);
