@@ -4,9 +4,7 @@
 }
 
 .calendlyContainer {
-  max-width: var(--container-max-width);
-  margin-inline: auto;
-  padding-inline: var(--section-container-padding);
+  composes: sectionContainer from '../../styles/composition.module.css';
 }
 
 .calendlySection :global(h2) {
@@ -110,4 +108,3 @@
     top: var(--space-8);
   }
 }
-

@@ -56,7 +56,7 @@
 }
 
 .contactItem:hover {
-  background-color: rgba(139, 44, 156, 0.08);
+  background-color: color-mix(in srgb, var(--color-primary) 8%, transparent);
   color: var(--color-primary);
   text-decoration: none;
 }
@@ -64,6 +64,7 @@
 .contactItem:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+  border-radius: var(--radius-md);
 }
 
 .contactItem svg {
@@ -71,10 +72,6 @@
   color: var(--color-primary);
   width: 24px;
   height: 24px;
-}
-
-.contactItem :global(svg.messenger-icon) {
-  color: var(--color-primary);
 }
 
 .contactItem :global(svg.messenger-icon) path {

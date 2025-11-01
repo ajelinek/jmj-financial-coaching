@@ -61,7 +61,7 @@
 
 .heroCta :global(.button) {
   font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-  padding: 1.25rem var(--space-8);
+  padding: var(--button-padding-large);
 }
 
 @media (min-width: 768px) {
@@ -69,4 +69,3 @@
     min-height: 500px;
   }
 }
-

@@ -2,19 +2,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-4);
   padding-block: var(--space-4);
-  background: linear-gradient(180deg, var(--color-bg), rgba(139, 44, 156, 0.03));
-  border-bottom: 2px solid rgba(139, 44, 156, 0.1);
+  background: linear-gradient(180deg, var(--color-bg), color-mix(in srgb, var(--color-primary) 3%, transparent));
+  border-bottom: 2px solid color-mix(in srgb, var(--color-primary) 10%, transparent);
 }
 
 .siteHeader nav a {
   color: var(--color-primary);
   font-weight: 600;
   font-size: var(--font-size-lg);
+  transition: color 0.2s ease;
 }
 
 .siteHeader nav a:hover {
   color: var(--color-primary-secondary);
   text-decoration: none;
+}
+
+.siteHeader nav a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .siteHeader nav a {
+    transition: none;
+  }
 }

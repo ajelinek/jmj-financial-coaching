@@ -46,13 +46,11 @@
 }
 
 .stepIconWrapper {
-  color: var(--color-primary);
-  margin-bottom: var(--space-2);
+  composes: sectionIconWrapper;
 }
 
 .stepIcon {
-  width: 64px;
-  height: 64px;
+  composes: sectionIcon;
 }
 
 .stepTitle {

@@ -99,3 +99,12 @@
     padding: var(--space-6);
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard {
+    transition: none;
+  }
+  .testimonialCard:hover {
+    transform: none;
+  }
+}

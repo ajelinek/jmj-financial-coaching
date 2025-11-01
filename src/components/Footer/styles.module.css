@@ -28,7 +28,7 @@
 }
 
 .footerCompany {
-  /* Company section - inherits from footerSection */
+  /* Reserved for company-specific styling if needed */
 }
 
 .footerHeading {
@@ -117,4 +117,3 @@
     transition: none;
   }
 }
-

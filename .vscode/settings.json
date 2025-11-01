@@ -18,5 +18,7 @@
     "titleBar.inactiveBackground": "#41182199",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#411821"
+  "peacock.color": "#411821",
+  "css.lint.unknownAtRules": "ignore",
+  "css.customData": [".vscode/css-modules.json"]
 }
