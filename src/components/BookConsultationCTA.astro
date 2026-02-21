@@ -15,33 +15,19 @@ const elementId = `book-consultation-cta-${location}`
   class={variant === 'primary' ? 'button' : 'link-inline'}
   type='button'
   aria-label={label}
-  aria-haspopup='dialog'
-  aria-controls='calendly-popup'
-  aria-expanded='false'
 >
   {label}
 </button>
 
-<script type='module' define:vars={{ elementId, url }}>
-  import { ensureCalendlyPopup } from '/src/lib/integrations/calendly'
-
+<script type='module' define:vars={{ elementId }}>
   const button = document.getElementById(elementId)
   if (button) {
     button.addEventListener('click', () => {
-      const popup = ensureCalendlyPopup({ url, hideDetails: false })
-      // reflect expanded state for assistive tech when opening the modal
-      button.setAttribute('aria-expanded', 'true')
-      popup.open()
+      const targetSection = document.getElementById('book')
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
     })
-  }
-
-  // Create a hidden control target for a11y reference
-  let target = document.getElementById('calendly-popup')
-  if (!target) {
-    target = document.createElement('div')
-    target.id = 'calendly-popup'
-    target.hidden = true
-    document.body.appendChild(target)
   }
 </script>
 
